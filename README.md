@@ -13,3 +13,8 @@ IDE: An Integrated Development Environment eclipse.
 #### Below is the Spring jdbc Architecture which is implemented in this project
 
 ![Spring jdbc](/assets/images/jdbc.png)
+
+1. JdbcJpaApplication.java the main application implements CommandLineRunner to execute Spring jdbc
+2. Course.java preresents as model
+3. CourseJdbcRepository.java is used to interact with H2 database using SPring jdbc template
+
