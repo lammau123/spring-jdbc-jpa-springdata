@@ -9,12 +9,26 @@ H2 Database: An in-memory database for development and testing.
 Maven: For project build and dependency management.
 IDE: An Integrated Development Environment eclipse.
 
-## Spring jdbc
-#### Below is the Spring jdbc Architecture which is implemented in this project
-
+## Spring JDBC
+The following diagram illustrates the Spring JDBC architecture implemented in this project
 ![Spring jdbc](/assets/images/jdbc.png)
 
-1. JdbcJpaApplication.java the main application implements CommandLineRunner to execute Spring jdbc
-2. Course.java preresents as model
-3. CourseJdbcRepository.java is used to interact with H2 database using SPring jdbc template
+JdbcJdbcApplication.java: The main application implements CommandLineRunner to execute Spring JDBC.
+Course.java: Represents the model.
+CourseJdbcRepository.java: Interacts with the H2 database using Spring JDBC template.
 
+## Spring JPA
+#### The following diagram illustrates the Spring JPA architecture implemented in this project
+![Spring jpa](/assets/images/jpa.png)
+
+JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring JPA.
+Course.java: Represents the model.
+CourseJpaRepository.java: Interacts with the H2 database using Spring JPA template.
+
+## Spring Data
+#### The following diagram illustrates the Spring Data architecture implemented in this project
+![Spring Data](/assets/images/springdata.png)
+
+JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring Data.
+Course.java: Represents the model.
+CourseSpringDataRepository.java: Interacts with the H2 database using Spring Data template.
