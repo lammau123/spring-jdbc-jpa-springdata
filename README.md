@@ -10,11 +10,12 @@ Maven: For project build and dependency management.
 IDE: An Integrated Development Environment eclipse.
 
 ## Spring JDBC
-The following diagram illustrates the Spring JDBC architecture implemented in this project
+#### The following diagram illustrates the Spring JDBC architecture implemented in this project
 ![Spring jdbc](/assets/images/jdbc.png)
 
 - JdbcJdbcApplication.java: The main application implements CommandLineRunner to execute Spring JDBC.
 - Course.java: Represents the model.
+- CourseEntity.java: Represents the database entity object.
 - CourseJdbcRepository.java: Interacts with the H2 database using Spring JDBC template.
 
 ## Spring JPA
@@ -23,6 +24,7 @@ The following diagram illustrates the Spring JDBC architecture implemented in th
 
 - JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring JPA.
 - Course.java: Represents the model.
+- CourseEntity.java: Represents the database entity object.
 - CourseJpaRepository.java: Interacts with the H2 database using Spring JPA template.
 
 ## Spring Data
@@ -31,4 +33,5 @@ The following diagram illustrates the Spring JDBC architecture implemented in th
 
 - JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring Data.
 - Course.java: Represents the model.
+- CourseEntity.java: Represents the database entity object.
 - CourseSpringDataRepository.java: Interacts with the H2 database using Spring Data template.

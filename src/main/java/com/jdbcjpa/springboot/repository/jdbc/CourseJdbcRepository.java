@@ -3,11 +3,12 @@ package com.jdbcjpa.springboot.repository.jdbc;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.DataClassRowMapper;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.jdbcjpa.springboot.model.jdbc.Course;
+import com.jdbcjpa.springboot.entity.CourseEntity;
+import com.jdbcjpa.springboot.model.Course;
 
 @Repository
 public class CourseJdbcRepository {
@@ -18,13 +19,16 @@ public class CourseJdbcRepository {
 	final static String FIND_BY_ID = "SELECT * FROM course WHERE id = ?";
 	final static String INSERT = "INSERT INTO course(id, name, author) VALUES(?, ?, ?)";
 	final static String DELETE = "DELETE FROM course WHERE id = ?";
+	final static String UPDATE = "UPDATE Course SET name = ?, author = ? WHERE id = ?";
 			
 	public List<Course> findAll(){
-		return jdbcTemplate.queryForStream(FIND_ALL_COURSES, new DataClassRowMapper<>(Course.class)).toList();
+		return jdbcTemplate.queryForStream(FIND_ALL_COURSES, new BeanPropertyRowMapper<>(CourseEntity.class))
+				.map(e -> new Course(e.getId(), e.getName(), e.getAuthor())).toList();
 	}
 	
 	public Course findById(long id) {
-		return jdbcTemplate.queryForObject(FIND_BY_ID, new DataClassRowMapper<>(Course.class), id);
+		var entity = jdbcTemplate.queryForObject(FIND_BY_ID, new BeanPropertyRowMapper<>(CourseEntity.class), id);
+		return new Course(entity.getId(), entity.getName(), entity.getAuthor());
 	}
 	
 	public void insert(final Course course) {
@@ -33,5 +37,13 @@ public class CourseJdbcRepository {
 	
 	public void delete(long id) {
 		jdbcTemplate.update(DELETE, id);
+	}
+	
+	public void update(final Course course) {
+		var entity = findById(course.id());
+		if (entity == null) {
+	        throw new IllegalArgumentException("Course not found: " + course.id());
+	    }
+		jdbcTemplate.update(UPDATE, course.name(), course.author(), course.id());
 	}
 }
