@@ -13,22 +13,22 @@ IDE: An Integrated Development Environment eclipse.
 The following diagram illustrates the Spring JDBC architecture implemented in this project
 ![Spring jdbc](/assets/images/jdbc.png)
 
-JdbcJdbcApplication.java: The main application implements CommandLineRunner to execute Spring JDBC.
-Course.java: Represents the model.
-CourseJdbcRepository.java: Interacts with the H2 database using Spring JDBC template.
+- JdbcJdbcApplication.java: The main application implements CommandLineRunner to execute Spring JDBC.
+- Course.java: Represents the model.
+- CourseJdbcRepository.java: Interacts with the H2 database using Spring JDBC template.
 
 ## Spring JPA
 #### The following diagram illustrates the Spring JPA architecture implemented in this project
 ![Spring jpa](/assets/images/jpa.png)
 
-JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring JPA.
-Course.java: Represents the model.
-CourseJpaRepository.java: Interacts with the H2 database using Spring JPA template.
+- JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring JPA.
+- Course.java: Represents the model.
+- CourseJpaRepository.java: Interacts with the H2 database using Spring JPA template.
 
 ## Spring Data
 #### The following diagram illustrates the Spring Data architecture implemented in this project
 ![Spring Data](/assets/images/springdata.png)
 
-JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring Data.
-Course.java: Represents the model.
-CourseSpringDataRepository.java: Interacts with the H2 database using Spring Data template.
+- JdbcJpaApplication.java: The main application implements CommandLineRunner to execute Spring Data.
+- Course.java: Represents the model.
+- CourseSpringDataRepository.java: Interacts with the H2 database using Spring Data template.
