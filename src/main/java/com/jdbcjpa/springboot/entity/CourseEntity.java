@@ -2,8 +2,10 @@ package com.jdbcjpa.springboot.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "Course")
 public class CourseEntity {
 
 	@Id
